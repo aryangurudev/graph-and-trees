@@ -1,0 +1,27 @@
+    #include <bits/stdc++.h>
+    #define rep(i,a,b) for(int i=(a);i<(b);i++)
+    #define per(i,a,b) for(int i=(a);i>(b);i--)
+    #define pb push_back
+    #define ff first
+    #define ss second
+    #define endl '\n'
+    #define mp make_pair
+    #define pb push_back
+    #define gap " "
+ 
+
+    typedef long long ll;
+    using namespace std;
+    
+    
+    int solve(){
+        return 0;
+    }
+    int main(){
+    int t;
+    cin>>t;
+    while(t--){
+          solve();
+    }
+    return 0;
+    }
