@@ -1,0 +1,80 @@
+#include <bits/stdc++.h>
+#define rep(i,a,b) for(int i=(a);i<(b);i++)
+#define per(i,a,b) for(int i=(a);i>(b);i--)
+#define pb push_back
+#define ff first
+#define ss second
+#define endl '\n'
+#define mp make_pair
+#define pb push_back
+#define gap " "
+//memset(dp,-1,sizeof(dp)) sets value to -1 of everything in dp
+//vector < vector<int > > vec(n,vector<int>(m,0)) here n are rows(top to down ) and m columns all with m vectors initialised with values 0
+//ARRAY OF VECTORS --> vector<int> ar[size] and to pass it in a function we use foo(vector<int>(&ar)[size])
+
+typedef long long ll;
+using namespace std;
+
+vector<int>ar[2001];
+int vis[2001],col[2001];
+
+bool dfs(int node, int c)
+{
+    vis[node]=1;
+    col[node]=c;
+    for(int child:ar[node])
+    {
+        if(vis[child]==0)
+        {
+
+            bool res=dfs(child,c^1);
+            if(res==false){return false;}
+        }
+        else {if(col[node]==col[child])
+            {
+                return false;
+            }}
+
+
+    }
+    return true;
+
+}
+
+int main()
+{
+    int t,n,m,a,b;
+    cin>>t;
+    for(int tc=1;tc<=t;tc++)
+    {
+        cin>>n>>m;
+        for(int i=1;i<=n;i++)
+        {
+            ar[i].clear();
+            vis[i]=0;col[i]=0;
+
+        }
+        for(int i=1;i<=m;i++)
+        {
+                cin>>a>>b;
+                ar[a].pb(b);
+                ar[b].pb(a);
+        }
+        bool flag=true;
+        for(int i=1;i<=n;i++)
+        {
+            if (vis[i]==0)
+            {
+                bool res=dfs(i,0);
+                if(res==false){flag=false;}
+
+            }
+
+
+        }
+         if(flag==true)cout<<"No suspicious bugs found!"<<endl;
+  else          cout<<"Suspicious bugs found!"<<endl;
+
+    }
+    return 0;
+}
