@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+#define rep(i,a,b) for(int i=(a);i<(b);i++)
+#define per(i,a,b) for(int i=(a);i>(b);i--)
+#define pb push_back
+#define ff first
+#define ss second
+#define endl '\n'
+#define mp make_pair
+#define pb push_back
+#define gap " "
+//memset(dp,-1,sizeof(dp)) sets value to -1 of everything in dp
+//vector < vector<int > > vec(n,vector<int>(m,0)) here n are rows(top to down ) and m columns all with m vectors initialised with values 0
+//ARRAY OF VECTORS --> vector<int> ar[size] and to pass it in a function we use foo(vector<int>(&ar)[size])
+
+typedef long long ll;
+using namespace std;
+
+vector<int>ar[2001];
+int vis[2001];
+
+bool dfs(int node, int parent)
+{
+    vis[node]=1;
+    for(int child: ar[node])
+    {
+        if(vis[child]==0)
+        {
+            if(dfs(child,node)==true)
+            {
+                return true;
+            }
+        }
+        else if(child!=parent) return true;
+    }
+    return false;
+}
+
+int main()
+{
+   int n,m;
+   cin>>n>>m;
+
+   for(int i=0;i<m;i++)
+   {
+       int a,b;
+       cin>>a>>b;
+       ar[a].pb(b);
+       ar[b].pb(a);
+
+   }
+   bool flag =false ;
+   for(int i=1;i<=n;i++)
+   {
+       if(vis[i]==0)
+       {
+           bool res= dfs(i,-1);
+           if(res==true){flag=true ; break;}
+       }
+
+   }
+   cout<<flag;
+   //if flag is one then there is one cycle is present
+    return 0;
+}
