@@ -36,7 +36,7 @@ void dfs(int node, int d)
 }
 int solve(){
     int n,m;
-    cin>>n>>n;
+    cin>>n>>m;
     rep(i,0,n)
     {
         int a,b;
