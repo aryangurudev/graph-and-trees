@@ -8,6 +8,10 @@
 #define mp make_pair
 #define pb push_back
 #define gap " "
+#define vi vector<int>
+#define ii pair<int,int>
+#define vii vector<ii>
+
 
 //memset(dp,-1,sizeof(dp)) sets value to -1 of everything in dp
 //vector < vector<int > > vec(n,vector<int>(m,0)) here n are rows(top to down ) and m columns all with m vectors initialised with values 0 
