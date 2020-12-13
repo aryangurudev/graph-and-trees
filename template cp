@@ -11,6 +11,8 @@
 #define vi vector<int>
 #define ii pair<int,int>
 #define vii vector<ii>
+#define ldb long double
+
 
 
 //memset(dp,-1,sizeof(dp)) sets value to -1 of everything in dp
