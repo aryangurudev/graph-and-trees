@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+#define rep(i,a,b) for(int i=(a);i<(b);i++)
+#define per(i,a,b) for(int i=(a);i>(b);i--)
+#define pb push_back
+#define ff first
+#define ss second
+#define endl '\n'
+#define mp make_pair
+#define pb push_back
+#define gap " "
+#define vi vector<int>
+#define ii pair<int,int>
+#define vii vector<ii>
+#define ldb long double
+
+
+
+//memset(dp,-1,sizeof(dp)) sets value to -1 of everything in dp
+//vector < vector<int > > vec(n,vector<int>(m,0)) here n are rows(top to down ) and m columns all with m vectors initialised with values 0 
+//ARRAY OF VECTORS --> vector<int> ar[size] and to pass it in a function we use foo(vector<int>(&ar)[size]) 
+//Number of digits in N =floor(log10(N)) + 1;  
+
+typedef long long ll;
+using namespace std;
+
+
+int solve(){
+    return 0;
+}
+int main(){
+#ifndef ONLINE_JUDGE
+    freopen("input1.txt","r",stdin);
+    freopen("output1.txt","w",stdout);
+    #endif 
+ios_base::sync_with_stdio(false); 
+    cin.tie(NULL); 
+int t;
+cin>>t;
+while(t--){
+      solve();
+}
+return 0;
+}
